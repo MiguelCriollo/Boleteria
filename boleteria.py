@@ -1,7 +1,16 @@
 import random
 def randomTicket():
-    ticket=[]
-    for num in range(4):
-        ticket.append(random.randint(0,9))
-    return ticket
-print(randomTicket())
+    return [random.randint(0,1) for _ in range(4) ]
+
+
+while True:
+    winnerTicket=randomTicket()
+    input("Enter para comprar ticket")
+    ticketUser=randomTicket()
+    print (f"Numero ganador es: {winnerTicket}, tu ticket es: {ticketUser}")
+    if(winnerTicket==ticketUser):
+        print("Ganaste")
+        break
+    else:
+        print("Perdiste")
+
